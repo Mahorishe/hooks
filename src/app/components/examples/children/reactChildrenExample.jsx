@@ -7,7 +7,7 @@ import Divider from "../../common/divider";
 
 const FormComponent = ({ children }) => {
     const [data, setData] = useState({});
-    const handleChange = ({ target }) => {
+    const handleChange = (target) => {
         setData((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
 
@@ -17,6 +17,7 @@ const FormComponent = ({ children }) => {
             onChange: handleChange,
             value: data[child.props.name] || ""
         };
+        console.log(config);
 
         return React.cloneElement(child, config);
     });
